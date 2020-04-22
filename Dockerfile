@@ -2,4 +2,5 @@ FROM nginx
 
 COPY src/* /usr/share/nginx/html/
 
-CMD ["nginx"]
+ENTRYPOINT ["nginx-debug"]
+CMD ["-g", "daemon off;"]
