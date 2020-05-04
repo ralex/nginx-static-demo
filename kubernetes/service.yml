@@ -1,0 +1,19 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: nginx-static-demo
+    namespace: demo
+  spec:
+    ports:
+    - name: port-tcp-8080
+      port: 8080
+      protocol: TCP
+      targetPort: 80
+    selector:
+      k8s-app: nginx-static-demo
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
